@@ -10,7 +10,7 @@ const HOST = '0.0.0.0';
 const app = express();
 app.get('/', (req, res) => {
 
-  exec('touch kensuke.txt',(err,stdout,stderr) => {
+  exec('cd /volume && touch kensuke.txt',(err,stdout,stderr) => {
     if(err){
       res.send(JSON.stringify(err));
       return;
