@@ -1,6 +1,6 @@
 FROM node:lts
 
-RUN mkdir -p /volume
+RUN mkdir -p /nuxt
 RUN mkdir -p /app
 COPY app /app
 WORKDIR /app
