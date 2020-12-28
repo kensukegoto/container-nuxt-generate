@@ -10,7 +10,7 @@ const HOST = '0.0.0.0';
 const app = express();
 app.get('/', (req, res) => {
 
-  exec('cd /nuxt && yarn generate',(err,stdout,stderr) => {
+  exec('cd /nuxt && yarn build && npx nuxt generate',(err,stdout,stderr) => {
     if(err){
       res.send(JSON.stringify(err));
       return;
