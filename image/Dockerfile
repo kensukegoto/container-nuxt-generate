@@ -1,4 +1,12 @@
-FROM node:lts
+FROM nikolaik/python-nodejs:python3.9-nodejs14-alpine
+# apkでライブラリ更新
+RUN apk update && \
+  apk add \
+  curl \
+  libxml2 \
+  libstdc++
+# AWS CLI
+RUN pip3 install awscli
 # nuxt
 RUN mkdir -p /nuxt
 COPY ctr-nuxt-gen-2 /nuxt
